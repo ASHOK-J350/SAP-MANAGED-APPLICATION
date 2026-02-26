@@ -1,0 +1,31 @@
+managed implementation in class zbp_cit_r_std_22EC301 unique;
+strict ( 2 );
+
+define behavior for ZCIT_R_STD_22EC301 alias Student
+persistent table ZCIT_STD_22EC059
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) Id;
+  field ( readonly ) Lastchangedat, Locallastchangedat;
+
+  mapping for ZCIT_STD_22EC301
+  {
+    Id = id;
+    Firstname = firstname;
+    Lastname = lastname;
+    Age = age;
+    Course = course;
+    Courseduration = courseduration;
+    Status = status;
+    Gender = gender;
+    Dob = dob;
+    Lastchangedat = lastchangedat;
+    Locallastchangedat = locallastchangedat;
+  }
+}
